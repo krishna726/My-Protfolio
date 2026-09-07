@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Kushwaha | Spatial UI & Creative Developer</title>
+  <meta name="description" content="Portfolio of Krishna Kushwaha - Aspiring Frontend Developer specializing in high-performance, cinematic Spatial UI and Glassmorphic web experiences.">
+  <meta name="keywords" content="Krishna Kushwaha, Portfolio, Frontend Developer, Web Developer, JavaScript, CSS3 3D, Spatial UI, Glassmorphism">
+
+  <!-- Favicon / Icon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google Fonts: Space Grotesk (Cinematic Display) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Main Spatial Glass Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="spatial-app">
+
+  <!-- Fluid Magnetic Cursor (Desktop) -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Ambient Liquid Gradient Mesh / Background Orbs -->
+  <div class="ambient-mesh" aria-hidden="true">
+    <div class="liquid-orb orb-primary"></div>
+    <div class="liquid-orb orb-secondary"></div>
+    <div class="liquid-orb orb-cyan"></div>
+    <div class="liquid-orb orb-amber"></div>
+    <div class="noise-overlay"></div>
+    <div class="grid-perspective"></div>
+  </div>
+
+  <!-- Top Cinematic Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-wrapper">
+      <a href="#home" class="brand-logo magnetic-target">
+        <span class="logo-symbol">&lt;K/&gt;</span>
+        <span class="logo-text">KRISHNA<span class="glow-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Spatial Menu -->
+      <nav class="spatial-nav" id="navMenu">
+        <a href="#home" class="nav-item active">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#journey" class="nav-item">Journey</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </nav>
+
+      <!-- Nav Actions: Resume + Mobile Hamburger -->
+      <div class="nav-actions">
+        <a href="krishnaResume.pdf" class="btn-glass cv-action magnetic-target" target="_blank" rel="noopener noreferrer">
+          <span>Resume</span>
+          <i class="fa-solid fa-arrow-down-long"></i>
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="menu-toggle-btn" id="menuBtn" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main id="smooth-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="spatial-section hero-section" id="home">
+      <!-- HUD System Telemetry -->
+      <div class="hud-bar">
+        <div class="hud-item"><span class="hud-pulse"></span> SYSTEM STATUS: OPTIMAL</div>
+        <div class="hud-item hud-coords"><i class="fa-solid fa-crosshairs"></i> SPATIAL PROTOCOL 2026</div>
+        <div class="hud-item hud-avail"><i class="fa-solid fa-circle-check"></i> OPEN TO OPPORTUNITIES</div>
+      </div>
+
+      <div class="hero-grid">
+        <!-- Hero Left: Typography & Actions -->
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span class="badge-sparkle">✨</span>
+            <span>NEXT-GEN WEB EXPERIENCES</span>
+          </div>
+
+          <h1 class="hero-headline">
+            <span class="split-line hero-greeting">Hi, I'm</span>
+            <span class="split-line gradient-text hero-name">Krishna Kushwaha</span>
+          </h1>
+
+          <div class="role-terminal">
+            <span class="terminal-prefix">&gt; specializing in </span>
+            <span class="role-typing" id="roleTyping"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+
+          <p class="hero-bio">
+            Passionate creative developer crafting responsive, cinematic web interfaces with deep 3D spatial depth, silky glassmorphism, and pixel-precise performance.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn-primary magnetic-target">
+              <span>Explore Projects</span>
+              <div class="btn-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+            </a>
+            <a href="#contact" class="btn-secondary magnetic-target">
+              <span>Initiate Contact</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </a>
+          </div>
+
+          <!-- Hero Social Transmitters -->
+          <div class="hero-transmitters">
+            <span class="transmitters-label">CONNECT:</span>
+            <div class="transmitters-links">
+              <a href="https://github.com/krishna726" class="social-chip magnetic-target" target="_blank" rel="noopener noreferrer" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/krishna-kushwaha-97878b378/" class="social-chip magnetic-target" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://www.instagram.com/krishnakushwaha8186/" class="social-chip magnetic-target" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right: 3D Spatial Holographic Profile -->
+        <div class="hero-right">
+          <div class="spatial-card-stage" id="heroCardStage">
+            <div class="spatial-profile-card" id="heroProfileCard">
+              <!-- Specular Glare Layer -->
+              <div class="card-glare"></div>
+
+              <!-- Top Terminal Header -->
+              <div class="card-terminal-bar">
+                <div class="terminal-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <div class="terminal-tag">PORTRAIT_SPEC_V2.0</div>
+                <div class="terminal-fps">60 FPS</div>
+              </div>
+
+              <!-- Image Frame with Cyber Scanner -->
+              <div class="photo-chassis">
+                <div class="laser-scanner"></div>
+                <img src="my.jpeg" alt="Krishna Kushwaha" class="portrait-image" loading="eager">
+                <div class="chassis-vignette"></div>
+              </div>
+
+              <!-- Card Bottom Info -->
+              <div class="card-bottom-info">
+                <div class="avatar-meta">
+                  <h4>Krishna Kushwaha</h4>
+                  <p>Frontend Engineer & Creative Coder</p>
+                </div>
+                <div class="availability-chip">
+                  <span class="pulse-indicator"></span>
+                  Ready to Deploy
+                </div>
+              </div>
+
+              <!-- Floating Spatial 3D Tags (translateZ) -->
+              <div class="floating-chip chip-1" data-depth="40">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Creative Developer</span>
+              </div>
+              <div class="floating-chip chip-2" data-depth="55">
+                <i class="fa-solid fa-code"></i>
+                <span>Clean Architecture</span>
+              </div>
+              <div class="floating-chip chip-3" data-depth="30">
+                <i class="fa-solid fa-fire"></i>
+                <span>Rapid Learner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-beacon magnetic-target" aria-label="Scroll to About section">
+        <span class="beacon-text">DISCOVER</span>
+        <div class="beacon-track">
+          <div class="beacon-thumb"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ABOUT SECTION (SPATIAL BENTO GRID) -->
+    <section class="spatial-section about-section" id="about">
+      <div class="section-header">
+        <div class="section-tag"><span class="tag-hash">#</span> 02 // DOSSIER</div>
+        <h2 class="section-title">
+          Engineering with Passion, <span class="gradient-text">Grounded in Curiosity.</span>
+        </h2>
+        <p class="section-subtitle">
+          A forward-thinking fresher dedicated to elevating web standards through modern engineering, spatial interactions, and responsive aesthetics.
+        </p>
+      </div>
+
+      <!-- Bento-Grid Layout -->
+      <div class="bento-grid">
+        <!-- Bento 1: Interactive Code Inspector -->
+        <div class="bento-item bento-code spatial-tilt-card">
+          <div class="card-glare"></div>
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="file-name">krishna.config.js</span>
+              <button class="copy-code-btn" id="copyCodeBtn" title="Copy snippet">
+                <i class="fa-regular fa-copy"></i>
+                <span class="copy-label">Copy</span>
+              </button>
+            </div>
+            <pre class="code-body"><code id="codeSnippet"><span class="c-keyword">const</span> <span class="c-variable">developer</span> = {
+  <span class="c-property">name</span>: <span class="c-string">"Krishna Kushwaha"</span>,
+  <span class="c-property">role</span>: <span class="c-string">"Frontend Web Developer"</span>,
+  <span class="c-property">focus</span>: [<span class="c-string">"Spatial UI"</span>, <span class="c-string">"Glassmorphic Design"</span>, <span class="c-string">"Responsive UX"</span>],
+  <span class="c-property">mindset</span>: <span class="c-string">"Continuous improvement through daily shipping"</span>,
+  <span class="c-property">status</span>: <span class="c-string">"Open to frontend roles & internships"</span>,
+  <span class="c-property">isHungryToLearn</span>: <span class="c-boolean">true</span>
+};</code></pre>
+          </div>
+        </div>
+
+        <!-- Bento 2: Core Philosophy -->
+        <div class="bento-item bento-philosophy spatial-tilt-card">
+          <div class="card-glare"></div>
+          <div class="bento-icon-box">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <h3>Modern Spatial Philosophy</h3>
+          <p>
+            I believe modern web interfaces shouldn't just be flat documents. By weaving together depth, interactive lighting, and liquid glass refractions, we build experiences that captivate users and make digital tools a pleasure to use.
+          </p>
+          <div class="philosophy-tags">
+            <span class="pill-tag">CSS 3D Perspective</span>
+            <span class="pill-tag">Liquid Glass</span>
+            <span class="pill-tag">Ultra Responsive</span>
+          </div>
+        </div>
+
+        <!-- Bento 3: Quick Metrics & Credentials -->
+        <div class="bento-item bento-metrics spatial-tilt-card">
+          <div class="card-glare"></div>
+          <div class="metric-block">
+            <div class="metric-val" data-target="100">0<span class="plus">%</span></div>
+            <div class="metric-label">Dedication & Drive</div>
+          </div>
+          <div class="metric-block">
+            <div class="metric-val" data-target="500">0<span class="plus">+</span></div>
+            <div class="metric-label">Hours of Coding Practice</div>
+          </div>
+          <div class="metric-block">
+            <div class="metric-val" data-target="15">0<span class="plus">+</span></div>
+            <div class="metric-label">Components & Tools Built</div>
+          </div>
+        </div>
+
+        <!-- Bento 4: Profile Credentials -->
+        <div class="bento-item bento-credentials spatial-tilt-card">
+          <div class="card-glare"></div>
+          <h3>Developer Profile</h3>
+          <ul class="credentials-list">
+            <li>
+              <span class="cred-label"><i class="fa-solid fa-user-graduate"></i> Education:</span>
+              <span class="cred-val">Computer Science Student</span>
+            </li>
+            <li>
+              <span class="cred-label"><i class="fa-solid fa-location-dot"></i> Location:</span>
+              <span class="cred-val">India (Remote Ready/on-site)</span>
+            </li>
+            <li>
+              <span class="cred-label"><i class="fa-solid fa-globe"></i> Languages:</span>
+              <span class="cred-val">English, Hindi</span>
+            </li>
+            <li>
+              <span class="cred-label"><i class="fa-solid fa-envelope"></i> Contact:</span>
+              <span class="cred-val">Krishnakushwaha123kk@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="spatial-section skills-section" id="skills">
+      <div class="section-header">
+        <div class="section-tag"><span class="tag-hash">#</span> 03 // MY SKILLS</div>
+        <h2 class="section-title">
+          Technologies I’m <span class="gradient-text">Learning.</span>
+        </h2>
+        <p class="section-subtitle">
+          Building my technical foundation in web development and improving every day.
+        </p>
+      </div>
+
+      <div class="skills-spatial-container">
+        <!-- Overview & Tags Card -->
+        <div class="skills-overview-card spatial-tilt-card">
+          <div class="card-glare"></div>
+          <div class="overview-icon-box">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3>Learning by building, improving every day.</h3>
+          <p>
+            I’m building a strong foundation in frontend development and exploring tools that help me create better, responsive, and user-friendly websites.
+          </p>
+          <div class="skills-tag-cloud">
+            <span class="skill-pill"><i class="fa-solid fa-check"></i> Problem Solving</span>
+            <span class="skill-pill"><i class="fa-solid fa-check"></i> Responsive Design</span>
+            <span class="skill-pill"><i class="fa-solid fa-check"></i> UI Design</span>
+            <span class="skill-pill"><i class="fa-solid fa-check"></i> Clean Code</span>
+          </div>
+        </div>
+
+        <!-- Technical Skills Progress Meters Card -->
+        <div class="skills-meters-card spatial-tilt-card">
+          <div class="card-glare"></div>
+          <div class="skills-meters-header">
+            <h4>Technical Skills</h4>
+            <span class="tech-badge">Core Stack</span>
+          </div>
+
+          <div class="skills-items-list">
+            <!-- HTML 85% -->
+            <div class="skill-meter" data-percent="85">
+              <div class="meter-info">
+                <span class="tech-title"><i class="fa-brands fa-html5"></i> HTML</span>
+                <span class="tech-pct">85%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" style="width: 0%"></div></div>
+            </div>
+
+            <!-- CSS 80% -->
+            <div class="skill-meter" data-percent="80">
+              <div class="meter-info">
+                <span class="tech-title"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                <span class="tech-pct">80%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" style="width: 0%"></div></div>
+            </div>
+
+            <!-- JavaScript 70% -->
+            <div class="skill-meter" data-percent="70">
+              <div class="meter-info">
+                <span class="tech-title"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="tech-pct">70%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" style="width: 0%"></div></div>
+            </div>
+
+            <!-- Bootstrap 60% -->
+            <div class="skill-meter" data-percent="60">
+              <div class="meter-info">
+                <span class="tech-title"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+                <span class="tech-pct">60%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" style="width: 0%"></div></div>
+            </div>
+
+            <!-- Mongodb 50% -->
+            <div class="skill-meter" data-percent="50">
+              <div class="meter-info">
+                <span class="tech-title"><i class="fa-solid fa-database"></i> Mongodb</span>
+                <span class="tech-pct">50%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" style="width: 0%"></div></div>
+            </div>
+
+            <!-- Node.js 55% -->
+            <div class="skill-meter" data-percent="55">
+              <div class="meter-info">
+                <span class="tech-title"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                <span class="tech-pct">55%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" style="width: 0%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="spatial-section projects-section" id="projects">
+      <div class="section-header">
+        <div class="section-tag"><span class="tag-hash">#</span> 04 // DEPLOYMENTS</div>
+        <h2 class="section-title">
+          Curated Works & <span class="gradient-text">Practice Projects.</span>
+        </h2>
+        <p class="section-subtitle">
+          Real-world applications showcasing responsive layouts, dynamic logic, and glassmorphic user experiences.
+        </p>
+      </div>
+
+      <!-- Project Category Filters -->
+      <div class="filter-deck">
+        <button class="filter-pill active magnetic-target" data-filter="all">All Projects</button>
+        <button class="filter-pill magnetic-target" data-filter="web">Web Portals</button>
+        <button class="filter-pill magnetic-target" data-filter="javascript">JavaScript Tools</button>
+        <button class="filter-pill magnetic-target" data-filter="design">Spatial & UI</button>
+      </div>
+
+      <!-- Spatial Projects Grid -->
+      <div class="projects-spatial-grid" id="projectsGrid">
+
+        <!-- Project 1: College Portal -->
+        <article class="project-spatial-card spatial-tilt-card" data-category="web">
+          <div class="card-glare"></div>
+          <div class="project-preview preview-portal">
+            <div class="preview-backdrop-glow"></div>
+            <div class="preview-badge">Featured 01</div>
+            <div class="preview-icon-wrapper">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="preview-glimmer"></div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-header">
+              <span class="project-serial">01 // EDUCATION PORTAL</span>
+              <h3 class="project-heading">College Information Portal</h3>
+            </div>
+            <p class="project-desc">
+              A responsive, comprehensive academic portal featuring modular directories for faculty, accredited courses, semester fees, exams schedule, and placement records.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-chip">HTML5</span>
+              <span class="tech-chip">CSS3</span>
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">Responsive Grid</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-card-action magnetic-target" title="View Portal Details">
+                <span>View Details</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="https://github.com/krishna726" target="_blank" rel="noopener noreferrer" class="btn-card-icon magnetic-target" title="Source Code">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Currency Converter (Live on GitHub Pages) -->
+        <article class="project-spatial-card spatial-tilt-card" data-category="javascript">
+          <div class="card-glare"></div>
+          <div class="project-preview preview-converter">
+            <div class="preview-backdrop-glow"></div>
+            <div class="preview-badge live-badge"><span class="live-dot"></span> Live Demo</div>
+            <div class="preview-icon-wrapper">
+              <i class="fa-solid fa-money-bill-transfer"></i>
+            </div>
+            <div class="preview-glimmer"></div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-header">
+              <span class="project-serial">02 // FINANCIAL UTILITY</span>
+              <h3 class="project-heading">Real-Time Currency Converter</h3>
+            </div>
+            <p class="project-desc">
+              An interactive currency conversion application built with vanilla JavaScript, featuring responsive input ergonomics, real-time conversion rates, and deployed live on GitHub Pages.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">CSS3 Glass</span>
+              <span class="tech-chip">REST API</span>
+              <span class="tech-chip">GitHub Pages</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://krishna726.github.io/my-first-project/" target="_blank" rel="noopener noreferrer" class="btn-card-action primary magnetic-target">
+                <span>Launch Live App</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://github.com/krishna726/my-first-project" target="_blank" rel="noopener noreferrer" class="btn-card-icon magnetic-target" title="Source Code">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Admin Dashboard -->
+        <article class="project-spatial-card spatial-tilt-card" data-category="design">
+          <div class="card-glare"></div>
+          <div class="project-preview preview-dashboard">
+            <div class="preview-backdrop-glow"></div>
+            <div class="preview-badge">Featured 03</div>
+            <div class="preview-icon-wrapper">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <div class="preview-glimmer"></div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-header">
+              <span class="project-serial">03 // ANALYTICS PLATFORM</span>
+              <h3 class="project-heading">Modern Spatial Admin Dashboard</h3>
+            </div>
+            <p class="project-desc">
+              A high-precision dark-mode dashboard interface engineered with frosted glass cards, fluid charts, telemetry meters, and adaptable multi-column responsive breakpoints.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-chip">HTML5</span>
+              <span class="tech-chip">CSS Glassmorphism</span>
+              <span class="tech-chip">Spatial UI</span>
+              <span class="tech-chip">Data Widgets</span>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-card-action magnetic-target" title="Inspect UI Architecture">
+                <span>Inspect Design</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="https://github.com/krishna726" target="_blank" rel="noopener noreferrer" class="btn-card-icon magnetic-target" title="Source Code">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- JOURNEY / TIMELINE SECTION -->
+    <section class="spatial-section journey-section" id="journey">
+      <div class="section-header">
+        <div class="section-tag"><span class="tag-hash">#</span> 05 // TRAJECTORY</div>
+        <h2 class="section-title">
+          Milestones & <span class="gradient-text">Continuous Growth.</span>
+        </h2>
+        <p class="section-subtitle">
+          The step-by-step roadmap of my progression from initial coding curiosity to modern spatial web development.
+        </p>
+      </div>
+
+      <div class="spatial-timeline">
+        <!-- Glowing Energy Beam (GSAP ScrollTrigger animated) -->
+        <div class="timeline-energy-track">
+          <div class="timeline-energy-beam" id="energyBeam"></div>
+        </div>
+
+        <!-- Milestone 1 -->
+        <div class="timeline-spatial-item">
+          <div class="timeline-milestone-marker">
+            <div class="marker-orb"></div>
+            <span class="marker-year">2026</span>
+          </div>
+          <div class="timeline-content-card spatial-tilt-card">
+            <div class="card-glare"></div>
+            <div class="timeline-header">
+              <span class="timeline-badge">PRESENT ERA</span>
+              <h3>Advanced Spatial UI & Full Stack Integration</h3>
+              <p class="timeline-role">Modern Web Architecture & Backend Connectivity</p>
+            </div>
+            <p class="timeline-text">
+              Pioneering immersive 3D spatial transformations, liquid glass interfaces, and connecting robust Node.js / Express and MongoDB backends to create end-to-end fluid web applications.
+            </p>
+            <div class="milestone-skills">
+              <span>CSS 3D Transforms</span>
+              <span>GSAP ScrollTrigger</span>
+              <span>RESTful APIs</span>
+              <span>Full-Stack MERN</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="timeline-spatial-item">
+          <div class="timeline-milestone-marker">
+            <div class="marker-orb"></div>
+            <span class="marker-year">2025</span>
+          </div>
+          <div class="timeline-content-card spatial-tilt-card">
+            <div class="card-glare"></div>
+            <div class="timeline-header">
+              <span class="timeline-badge">ACCELERATION</span>
+              <h3>Responsive Engineering & JavaScript Deep Dive</h3>
+              <p class="timeline-role">Core Frontend Fundamentals & DOM Manipulation</p>
+            </div>
+            <p class="timeline-text">
+              Mastered asynchronous JavaScript, responsive grid systems, Bootstrap frameworks, and developed multiple utility web tools including live converters and interactive portals.
+            </p>
+            <div class="milestone-skills">
+              <span>ES6+ JavaScript</span>
+              <span>Responsive Web Design</span>
+              <span>Git / GitHub</span>
+              <span>Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="timeline-spatial-item">
+          <div class="timeline-milestone-marker">
+            <div class="marker-orb"></div>
+            <span class="marker-year">2024</span>
+          </div>
+          <div class="timeline-content-card spatial-tilt-card">
+            <div class="card-glare"></div>
+            <div class="timeline-header">
+              <span class="timeline-badge">GENESIS</span>
+              <h3>The First Line of Code</h3>
+              <p class="timeline-role">Beginning the Computer Science Journey</p>
+            </div>
+            <p class="timeline-text">
+              Discovered a passion for programming and web development. Built first static HTML & CSS pages, embraced algorithmic thinking, and established dedication to daily coding practice.
+            </p>
+            <div class="milestone-skills">
+              <span>HTML5 Foundations</span>
+              <span>CSS Basics</span>
+              <span>Computer Science Fundamentals</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION (LIQUID GLASS TERMINAL) -->
+    <section class="spatial-section contact-section" id="contact">
+      <div class="section-header">
+        <div class="section-tag"><span class="tag-hash">#</span> 06 // TRANSMISSION</div>
+        <h2 class="section-title">
+          Initiate Contact & <span class="gradient-text">Build Together.</span>
+        </h2>
+        <p class="section-subtitle">
+          Have an exciting project, an internship opportunity, or want to discuss creative frontend development? Send a message directly.
+        </p>
+      </div>
+
+      <div class="spatial-contact-terminal">
+        <!-- Terminal Sidebar / Direct Channels -->
+        <div class="terminal-sidebar spatial-tilt-card">
+          <div class="card-glare"></div>
+          <div class="sidebar-header">
+            <div class="radar-dot"></div>
+            <div>
+              <h3>Transmission Hub</h3>
+              <p>Direct Channels & Coordinates</p>
+            </div>
+          </div>
+
+          <div class="channel-list">
+            <div class="channel-card">
+              <div class="channel-icon"><i class="fa-solid fa-location-arrow"></i></div>
+              <div class="channel-content">
+                <span class="channel-type">LOCATION</span>
+                <span class="channel-val">Uttar Pradesh, India</span>
+              </div>
+            </div>
+
+            <div class="channel-card">
+              <div class="channel-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="channel-content">
+                <span class="channel-type">OPPORTUNITY STATUS</span>
+                <span class="channel-val text-green">Available for Hiring</span>
+              </div>
+            </div>
+
+            <div class="channel-card">
+              <div class="channel-icon"><i class="fa-solid fa-code-branch"></i></div>
+              <div class="channel-content">
+                <span class="channel-type">CODE REPOSITORIES</span>
+                <a href="https://github.com/krishna726" target="_blank" rel="noopener noreferrer" class="channel-link">
+                  github.com/krishna726 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-socials">
+            <a href="https://github.com/krishna726" class="social-btn magnetic-target" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/krishna-kushwaha-97878b378/" class="social-btn magnetic-target" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/krishnakushwaha8186/" class="social-btn magnetic-target" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Terminal Form Chassis (Connected to existing /api/contact) -->
+        <div class="terminal-form-chassis spatial-tilt-card">
+          <div class="card-glare"></div>
+          <div class="chassis-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="header-stamp">API_ENDPOINT: /api/contact [POST]</span>
+            <div class="header-status"><span class="live-dot"></span> LIVE</div>
+          </div>
+
+          <form id="contactForm" class="liquid-form" novalidate>
+            <div class="input-field-group">
+              <label for="name" class="field-label">
+                <i class="fa-regular fa-user"></i> YOUR NAME
+              </label>
+              <div class="field-wrapper">
+                <input type="text" id="name" name="name" class="glass-input" placeholder="e.g. Alex Morgan" required autocomplete="name">
+                <div class="field-glow"></div>
+              </div>
+            </div>
+
+            <div class="input-field-group">
+              <label for="email" class="field-label">
+                <i class="fa-regular fa-envelope"></i> YOUR EMAIL
+              </label>
+              <div class="field-wrapper">
+                <input type="email" id="email" name="email" class="glass-input" placeholder="e.g. alex@domain.com" required autocomplete="email">
+                <div class="field-glow"></div>
+              </div>
+            </div>
+
+            <div class="input-field-group">
+              <label for="message" class="field-label">
+                <i class="fa-regular fa-comment-dots"></i> TRANSMISSION MESSAGE
+              </label>
+              <div class="field-wrapper">
+                <textarea id="message" name="message" class="glass-textarea" rows="4" placeholder="Share project details, opportunities, or say hello..." required></textarea>
+                <div class="field-glow"></div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit-transmission magnetic-target" id="submitBtn">
+              <span class="btn-text">Transmit Message</span>
+              <span class="btn-loading-spinner" aria-hidden="true">
+                <i class="fa-solid fa-circle-notch fa-spin"></i>
+              </span>
+              <div class="btn-icon">
+                <i class="fa-solid fa-paper-plane"></i>
+              </div>
+            </button>
+
+            <!-- Status message container -->
+            <div id="formMessage" class="form-feedback-message" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="spatial-footer">
+      <div class="footer-wrapper">
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo magnetic-target">
+            <span class="logo-symbol">&lt;K/&gt;</span>
+            <span class="logo-text">KRISHNA<span class="glow-dot">.</span></span>
+          </a>
+          <p class="footer-tagline">Crafted with Spatial UI & Liquid Glassmorphism.</p>
+        </div>
+
+        <div class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#journey">Journey</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-actions">
+          <a href="#home" class="back-to-top magnetic-target" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Krishna Kushwaha. All Rights Reserved. Engineered with GSAP & Pure CSS 3D.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- GSAP Core & ScrollTrigger via official CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main Spatial Script -->
+  <script src="script.js"></script>
+</body>
+</html>
