@@ -168,101 +168,62 @@ body.cursor-hover .cursor-dot {
 }
 
 /* ==========================================================================
-   AMBIENT LIQUID GRADIENT MESH & NOISE OVERLAY
+   3D CINEMATIC SPATIAL CANVAS ENGINE & LIGHT SPOTLIGHT
    ========================================================================== */
+#spatialBgCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ambient Cursor / Touch Light Spotlight */
+.cursor-glow {
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.18) 0%,
+    rgba(6, 182, 212, 0.12) 35%,
+    rgba(236, 72, 153, 0.05) 55%,
+    transparent 75%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+  transition: opacity 0.4s ease;
+  opacity: 0.85;
+  will-change: transform;
+}
+
+/* Subtle Film Grain Noise */
 .ambient-mesh {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
   overflow: hidden;
 }
 
-.liquid-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.35;
-  mix-blend-mode: screen;
-  will-change: transform;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-
-.orb-primary {
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, rgba(139, 92, 246, 0) 70%);
-  top: -10%;
-  right: 5%;
-  animation: floatOrb1 22s infinite alternate;
-}
-
-.orb-secondary {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(236, 72, 153, 0.6) 0%, rgba(236, 72, 153, 0) 70%);
-  bottom: 10%;
-  left: -10%;
-  animation: floatOrb2 26s infinite alternate;
-}
-
-.orb-cyan {
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.5) 0%, rgba(6, 182, 212, 0) 70%);
-  top: 45%;
-  left: 25%;
-  animation: floatOrb3 20s infinite alternate;
-}
-
-.orb-amber {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, rgba(99, 102, 241, 0) 70%);
-  bottom: -5%;
-  right: 20%;
-  animation: floatOrb1 28s infinite alternate-reverse;
-}
-
-@keyframes floatOrb1 {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-80px, 120px, 0) scale(1.15); }
-  100% { transform: translate3d(60px, -60px, 0) scale(0.95); }
-}
-
-@keyframes floatOrb2 {
-  0% { transform: translate3d(0, 0, 0) scale(0.9); }
-  50% { transform: translate3d(100px, -90px, 0) scale(1.1); }
-  100% { transform: translate3d(-50px, 70px, 0) scale(1); }
-}
-
-@keyframes floatOrb3 {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-100px, -80px, 0) scale(1.2); }
-  100% { transform: translate3d(80px, 90px, 0) scale(0.85); }
-}
-
-/* Subtle Film Grain Noise */
 .noise-overlay {
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
-  opacity: 0.7;
+  opacity: 0.6;
   pointer-events: none;
 }
 
-/* Subtle Grid with Perspective */
-.grid-perspective {
-  position: absolute;
-  inset: 0;
-  background-size: 60px 60px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-  pointer-events: none;
+@media (max-width: 768px) {
+  .cursor-glow {
+    width: 320px;
+    height: 320px;
+    opacity: 0.65;
+  }
 }
 
 /* ==========================================================================
@@ -312,9 +273,27 @@ body.cursor-hover .cursor-dot {
 }
 
 .logo-symbol {
-  color: var(--violet-primary);
-  font-weight: 700;
-  text-shadow: 0 0 12px var(--violet-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 9px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(6, 182, 212, 0.2));
+  border: 1px solid rgba(139, 92, 246, 0.45);
+  border-radius: var(--radius-sm);
+  color: var(--cyan-neon);
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
+  transition: all 0.3s ease;
+}
+
+.brand-logo:hover .logo-symbol {
+  border-color: var(--cyan-neon);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  transform: scale(1.05);
 }
 
 .logo-text {
@@ -1310,6 +1289,171 @@ body.cursor-hover .cursor-dot {
 }
 
 /* ==========================================================================
+   SERVICES SECTION (SPATIAL CARDS GRID)
+   ========================================================================== */
+.services-section {
+  position: relative;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  padding: 34px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--surface-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  transition: transform 0.3s var(--ease-cinematic), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+.service-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.service-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  color: var(--cyan-neon);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover .service-icon-wrap {
+  transform: scale(1.08) rotate(3deg);
+  background: rgba(139, 92, 246, 0.22);
+  color: var(--silver-bright);
+}
+
+.service-badge {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--cyan-neon);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.service-badge.highlight {
+  color: var(--violet-primary);
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--silver-bright);
+  letter-spacing: -0.3px;
+}
+
+.service-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--silver-muted);
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* Service 4: Training & Mentorship Featured */
+.service-card-featured {
+  grid-column: 1 / -1;
+}
+
+.training-modules {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 8px 0;
+}
+
+.training-module-item {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.25s ease;
+}
+
+.training-module-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(139, 92, 246, 0.35);
+  transform: translateY(-2px);
+}
+
+.training-mod-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.training-mod-top h4 {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--silver-bright);
+}
+
+.training-mod-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan-neon);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.training-mod-info p {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--silver-muted);
+}
+
+/* ==========================================================================
    SKILLS SECTION (SPATIAL 2-COLUMN LAYOUT)
    ========================================================================== */
 .skills-spatial-container {
@@ -2225,6 +2369,18 @@ body.cursor-hover .cursor-dot {
   .spatial-contact-terminal {
     grid-template-columns: 1fr;
   }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card-featured {
+    grid-column: 1;
+  }
+
+  .training-modules {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 820px) {
@@ -2321,7 +2477,38 @@ body.cursor-hover .cursor-dot {
   }
 
   .floating-chip {
-    display: none;
+    display: inline-flex;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    z-index: 5;
+    animation: chipFloatMobile 4s ease-in-out infinite alternate;
+  }
+
+  .floating-chip.chip-1 {
+    top: 10%;
+    left: -12px;
+    animation-delay: 0s;
+  }
+
+  .floating-chip.chip-2 {
+    bottom: 18%;
+    right: -10px;
+    animation-delay: 1.3s;
+  }
+
+  .floating-chip.chip-3 {
+    top: 42%;
+    right: -14px;
+    animation-delay: 2.6s;
+  }
+
+  @keyframes chipFloatMobile {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-7px) scale(1.02); }
+  }
+
+  .btn-primary:active, .btn-secondary:active, .btn-glass:active, .filter-pill:active {
+    transform: scale(0.96) !important;
   }
 
   .spatial-profile-card {
